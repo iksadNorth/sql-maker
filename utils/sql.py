@@ -10,6 +10,8 @@ def make_tuple(schema : dict):
 
 def make_insert_query(table : str, schema : dict):
     keys, values = make_tuple(schema)
+    keys = ', '.join(keys)
+    keys = f'({keys})'
     return f"""INSERT INTO {table} {keys} VALUES {values};"""
 
 def make_sql_generator(table : str, schema : dict, n : int = 10):
