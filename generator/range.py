@@ -1,5 +1,6 @@
 from random import randint
+from utils.itertools import infinitify_with_args
 
+@infinitify_with_args
 def generator(a=0, b=100):
-    while True:
-        yield randint(a, b)
+    return randint(a, b)
